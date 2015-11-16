@@ -1,3 +1,3 @@
 # XonarDGOuputSwitcher
 
-Switch analog output for Xonar DG audio card
+Gnome Shell extension for switch analog output for Xonar DG audio card
