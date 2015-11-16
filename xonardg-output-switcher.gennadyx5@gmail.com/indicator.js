@@ -27,8 +27,10 @@ const Indicator = new Lang.Class({
     _init: function(extension) {
         this.parent(0, 0);
         this._extension = extension;
-        this._label = new St.Label({text: this._extension.getSourceShortcut(),
-            style_class: 'label'});
+        this._label = new St.Label({
+            text: this._extension.getSourceShortcut(),
+            style_class: 'label'
+        });
        
         this.actor.add_actor(this._label);
         this.actor.connect('button-press-event', this._onClick.bind(this));

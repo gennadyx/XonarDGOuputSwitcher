@@ -22,13 +22,15 @@ const Extensions = imports.misc.extensionUtils;
 const Local = Extensions.getCurrentExtension();
 const Indicator = Local.imports.indicator;
 
-const Extension = new Lang.Class({
-    Name: 'XonarDgOutputSwicther',
+
     
-    _outputSourcesShortcuts: {
+const outputSourcesShortcuts = {
         'Stereo Headphones FP': 'FP',
         'Stereo Headphones': 'BP'
-    },
+};
+
+const Extension = new Lang.Class({
+    Name: 'XonarDgOutputSwicther',
     
     _init: function() {
         this._detectXonarCard();
@@ -48,7 +50,7 @@ const Extension = new Lang.Class({
     },
     
     getSourceShortcut: function() {
-        return this._outputSourcesShortcuts[this._lastOutputSource];
+        return outputSourcesShortcuts[this._lastOutputSource];
     },
     
     _getLastOutputSource: function() {
@@ -73,7 +75,6 @@ const Extension = new Lang.Class({
     
     destroy: function() {
         this._indicator.destroy();
-        this.parent();
     }
 });
 
